@@ -1,0 +1,92 @@
+<html>
+	<head> 
+		<title>Task2</title>
+	</head>
+
+
+	<body>
+		<table border="1", cellpadding="10">
+			<tr>
+				<th colspan="2", align="CENTER">Конфигуратор бургеров ._.</th>
+			</tr>
+
+			<tr>
+				<td>Тип булочки:</td>
+				<td>
+					<select>
+						<option selected>Булочка с кунжутом</option>
+						<option>Булочка с черным тмином</option>
+						<option>Булочка с тыквенной посыпкой</option>
+						<option>Булочка с клюквенным сиропом</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Тип мяса:</td>
+				<td>
+					<select>
+						<option selected>Говядина</option>
+						<option>Курица</option>
+						<option>Мраморная говядина</option>
+						<option>Харам</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Опции:</td>
+				<td>
+					<input type = "checkbox" name = "Checkbox"> Огурцы<br>
+					<input type = "checkbox" name = "Checkbox"> Халапеньо<br>
+					<input type = "checkbox" name = "Checkbox"> Чили<br>
+					<input type = "checkbox" name = "Checkbox"> Моцарелла<br>
+					<input type = "checkbox" name = "Checkbox"> Пармезан<br>
+					<input type = "checkbox" name = "Checkbox"> Четкий бекон<br>
+					<input type = "checkbox" name = "Checkbox"> Харамный бекон (-100 к карме)<br>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Адрес:</td>
+				<td>
+					<input type = "text", name = "textField", placeholder = "Введите адрес">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Ф.И.О. заказчика:</td>
+				<td>
+					<input type = "text", name = "textField", placeholder = "Введите Ф.И.О.">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Желаемое время доставки:</td>
+				<td>
+					<input type = "datetime-local", name = "">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Выбор бургера:</td>
+				<td>
+					<select>
+						<option selected>Гамбургер</option>
+						<option>Гамбургер XXL</option>
+						<option>Чизбургер</option>
+						<option>Чизбургер XXL</option>
+						<option>Харамбургер (-300 к карме)</option>
+						<option>Харамбургер XXL (-500 к карме)</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2", align="CENTER">
+					<input type="button", name="order", value="Сделать заказ">
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
