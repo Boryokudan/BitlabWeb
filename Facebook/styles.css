@@ -1,0 +1,98 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+q {
+    color: grey;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    background-color: #4267B2;
+}
+
+.header a {
+    width: 30%;
+    padding: 12px 20px;
+    color: white;
+    font-size: 22px;
+}
+
+.logOut {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    color: #4267B2;
+    font-size: 15px;
+}
+
+.blockOne {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    margin: 1%;
+    border: 1px solid lightgray;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.blockOne > q {
+    padding: 5% 5% 5%;
+}
+
+.profilePhoto > img {
+    border-radius: 10px 10px 0px 0px;
+    height: auto;
+    width: 100%;
+}
+
+.profileName {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 0% 15%;
+    font-size: 20px;
+}
+
+.profileName > a {
+    color: #4267B2;
+}
+
+.leftBar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.leftBar a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1% 10%;
+    color: grey;
+    border: 0.01px lightgray solid;
+}
+
+.leftBar img {
+    height: 25px;
+    margin-right: 10%;
+}
