@@ -8,18 +8,158 @@
     </head>
     <body>
         <script text="text/javascript">
-            
 
-            function exerciseOne {
+            // exerciseOne();
+            // exerciseTwo();
+            // exerciseThree();
+            // exerciseFour();
+            // exerciseFive();
+            exerciseSix();
+
+            function exerciseOne() {
                 let length = parseInt(prompt("Enter array length: "));
 
-                let arr[i]
+                let arr = [];
 
-                for (let i = 0; i < length; i++) {
-                    parseInt(prompt("Enter element: "));
+                for (var i = 0; i < length; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    arr[i] = n;
+                }
+                
+                let reversedArr = "[";
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    if (i == 0) reversedArr += arr[i] + ']';
+                    else reversedArr += arr[i] + ', '
                 }
 
+                alert("Reversed array: " + reversedArr);
+            }
 
+            function exerciseTwo() {
+                let length = parseInt(prompt("Enter array length: "));
+                let arr = [];
+
+                let maxElement = Number.MIN_VALUE;
+                for (var i = 0; i < length; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    if (n > maxElement) maxElement = n;
+                    arr[i] = n;
+                }
+
+                alert("Max element: " + maxElement);
+            }
+
+            function exerciseThree() {
+                let length = parseInt(prompt("Enter array length: "));
+                let arr = [];
+
+                let sum = 0;
+                for (var i = 0; i < length; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    arr[i] = n;
+                    sum += n;
+                }
+
+                alert("Sum: " + sum + '\n' + "Meridian value: " + sum / length);
+            }
+
+            function exerciseFour() {
+                let length = parseInt(prompt("Enter array length: "));
+                let sqArr = [];
+
+                for (var i = 0; i < length; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    sqArr[i] = n * n;
+                }
+
+                let arrS = "[";
+                for (var i = 0; i < sqArr.length; i++) {
+                    if (i == sqArr.length - 1) arrS += sqArr[i] + ']';
+                    else arrS += sqArr[i] + ', ';
+                }
+
+                alert("Squared values: " + arrS);
+            }
+
+            function exerciseFive() {
+                let users = [
+                    {"login": "ilyas", "password": "qwerty"},
+                    {"login": "eldar", "password": "qqqqq"},
+                    {"login": "assylkhan", "password": "qweqwe"},
+                    {"login": "anel", "password": "asdasd"},
+                    {"login": "alibek", "password": "aaaaaa"}
+                ];
+
+                let inputLogin = prompt("Enter your login: ");
+                let inputPasword = prompt("Enter your password: ");
+                let isValid = false;
+
+                for (var i = 0; i < users.length; i++) {
+                    if ((users[i]["login"].localeCompare(inputLogin) == 0) && (users[i]["password"].localeCompare(inputPasword) == 0)) 
+                        isValid = true;
+                }
+
+                if (isValid) alert("Successfully authorized.");
+                else alert("User not found.");
+            }
+
+            function exerciseSix() {
+                let books = [
+                    {"title": "Harry Potter and the Philosopher's Stone",
+                     "author": "Joanne Rowling", 
+                     "ISBN": "1233123",
+                     "price": "50$"},
+
+                     {"title": "Killer Mike",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000000",
+                     "price": "500$"},
+
+                    {"title": "Killer Mike II",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000001",
+                     "price": "550$"},
+                    
+                     {"title": "Killer Mike III",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000002",
+                     "price": "600$"},
+
+                    {"title": "Harry Potter and the Philosopher's Stone",
+                     "author": "Joanne Rowling", 
+                     "ISBN": "1233123",
+                     "price": "50$"},
+
+                     {"title": "Killer Mike IV",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000003",
+                     "price": "650$"},
+
+                     {"title": "Killer Mike V",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000004",
+                     "price": "700$"},
+
+                    {"title": "Harry Potter and the Prisoner of Azkaban",
+                     "author": "Joanne Rowling", 
+                     "ISBN": "452323",
+                     "price": "55$"},
+                    
+                     {"title": "Killer Mike VI",
+                     "author": "Mike Killer", 
+                     "ISBN": "0000005",
+                     "price": "7000$"}
+                ]
+
+                let inputAuthor = prompt("Enter the author: ");
+                let booksOfTheAuthor = "Books of " + inputAuthor + ": \n";
+
+                for (let i = 0; i < books.length; i++) {
+                    if (books[i]["author"].localeCompare(inputAuthor) == 0) {
+                        booksOfTheAuthor += books[i]["title"] + " - " + books[i]["author"] + " - " + books[i]["ISBN"] + " - " + books[i]["price"] + '\n';
+                    }
+                }
+                alert(booksOfTheAuthor);
             }
         </script>
     </body>
