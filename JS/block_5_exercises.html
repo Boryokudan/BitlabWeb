@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script text="text/javascript">
+
+            while(true) {
+
+                chooseEx();
+
+            }
+
+            function chooseEx() {
+                let exNum = parseInt(prompt("Enter exercise number: "));
+
+                let exList = [exerciseOne, exerciseTwo, exerciseThree, exerciseFour, exerciseFive, exerciseSix,
+                              exerciseSeven, exerciseEight, exerciseNine, exerciseTen, exerciseEleven, exerciseTwelve,
+                              exerciseThirteen, exerciseFourteen, exerciseFifteen];
+
+                if (exNum <= 0 || exNum > exList.length) return alert("Exercise with the given number does not exist.");
+
+                return exList[exNum - 1]();
+            }
+
+            function exerciseOne() {
+                let x = parseInt(prompt("Enter the value of x: "));  
+                let y = (x * x) + 2 * x - 1;
+                alert("y equals " + y + '.');
+            }
+
+            function exerciseTwo() {
+                let a = parseInt(prompt("Enter the value of a: "));
+                let b = parseInt(prompt("Enter the value of b: "));
+
+                if (a % b == 0) alert("Divisible.");
+                else alert("Not divisible.");
+            }
+
+            function exerciseThree() {
+                let firstName = prompt("Enter your first name: ");
+                let lastName = prompt("Enter your last name: ");
+                let city = prompt("Enter your city of residence: ");
+                let age = parseInt(prompt("Enter your age: "));
+
+                alert(
+                    "First name:" + firstName + '\n' + 
+                    "Last name: " + lastName + '\n' + 
+                    "City: " + city + '\n' + 
+                    "Age: " + age + '\n'
+                )
+            }
+
+            function exerciseFour() {
+                let a = parseInt(prompt("Enter the value of a: "));
+                let b = parseInt(prompt("Enter the value of b: "));
+                let c = parseInt(prompt("Enter the value of c: "));
+
+                let sum = a + b + c;
+                let div = a - b - c;
+                let mult = a * b * c;
+
+                alert(
+                    "a + b + c = " + sum + '\n' +
+                    "a - b - c = " + div + '\n' +
+                    "a * b * c = " + mult + '\n'
+                )
+            }
+
+            function exerciseFive() {
+                let n = parseInt(prompt("Enter the number of pupils: "));
+                let k = parseInt(prompt("Enter the number of apples to distribute: "));
+                let applesLeft = k % n;
+                alert("Apples left: " + applesLeft);
+            }
+
+            function exerciseSix() {
+                let a = parseInt(prompt("Enter the length of first leg: "));
+                let b = parseInt(prompt("Enter the length of second leg: "));
+                let hypotenuse = Math.sqrt((a * a) + (b * b));
+
+                alert("Hypotenuse is: " + hypotenuse);
+            }
+            
+            function exerciseSeven() {
+                let speed = parseInt(prompt("Enter the speed: "));
+                let distance = parseInt(prompt("Enter the distance: "));
+                let currentTime = 225;
+                let targetTime = 360;
+
+                if (currentTime + (distance / speed * 60) < targetTime) alert("YES, YOU CAN REACH!");
+                else alert("NO, YOU CANNOT REACH");
+            }
+
+            function exerciseEight() {
+                let whiskasToBuy = parseInt(prompt("Enter number of whiskas packs to buy: "));
+                let whiskasPrice = 120;
+                let sumToPay = whiskasToBuy * whiskasPrice;
+
+                if (sumToPay > 4000) sumToPay = sumToPay - (sumToPay / 10);
+
+                alert("Sum to pay: " + sumToPay + " KZT");
+            }
+
+            function exerciseNine() {
+                let sumInKZT = parseInt(prompt("Enter the sum in KZT: "));
+
+                let currencies = ["USD", "EUR", "GBP"];
+                let rateUSD = 380;
+                let rateEUR = 430;
+                let rateGBP = 480;
+
+                let input = parseInt(prompt(
+                    "PRESS [1] TO CONVERT TO " + currencies[0] + '\n' + 
+                    "PRESS [2] TO CONVERT TO " + currencies[0] + '\n' +
+                    "PRESS [3] TO CONVERT TO " + currencies[0] + '\n' +
+                    "Exchange rates:" + '\n' + '\n' + 
+                    "\tUSD - 380 KZT;" + '\n' + 
+                    "\tEUR - 430 KZT;" + '\n' + 
+                    "\tGBP - 480 KZT;" + '\n'));
+
+                let chosenCurrency = currencies[input - 1];
+                let convertedSum = 0;
+
+                if (chosenCurrency == "USD") convertedSum = sumInKZT / rateUSD;
+                else if (chosenCurrency == "EUR") convertedSum = sumInKZT / rateEUR;
+                else if (chosenCurrency == "GBP") convertedSum = sumInKZT / rateGBP;
+                else alert("Invalid input.")
+
+                alert("Converted sum: " + convertedSum.toFixed(2) + " " + chosenCurrency) 
+            }
+
+            function exerciseTen() {
+                let login = "user";
+                let password = "qwerty";
+
+                let inputLogin = prompt("Enter login: ");
+                let inputPassword = prompt("Enter password: ");
+
+                if ((login.localeCompare(inputLogin) == 0) && (password.localeCompare(inputPassword) == 0)) alert("Authentication completed.");
+                else alert("Invalid login or password!");
+            }
+
+            function exerciseEleven() {
+                let inputYear = parseInt(prompt("Enter year: "));
+
+                if ((inputYear % 4 == 0) && (inputYear % 100 != 0)) alert("This year is leap.");
+                else if (inputYear % 400 == 0) alert("This year is leap.");
+                else alert("This year is not leap.")
+            }
+
+            function exerciseTwelve() {
+                let points = parseInt(prompt("Enter your points: "));
+                let grade = "";
+
+                if (points < 0) return alert("Invalid input!");
+                else if (points < 50) grade = "F";
+                else if (points <= 60) grade = "D";
+                else if (points <= 75) grade = "B";
+                else if (points <= 100) grade = "A";
+
+                alert("Your grade is: " + grade);
+            }
+
+            function exerciseThirteen() {
+                let a = parseInt(prompt("Enter value of A: "));
+                let b = parseInt(prompt("Enter value of B: "));
+                let c = parseInt(prompt("Enter value of C: "));
+
+                if (a + b > c && a + c > b && c + b > a) alert("Triangle exists.");
+                else alert("Triangle does not exist.");
+            }
+
+            function exerciseFourteen() {
+                let usdRate = 380;
+                let totalKZT = parseInt(prompt("Enter amount in KZT: "));
+
+                let totalUSD = totalKZT / usdRate;
+
+                if (totalUSD % 1 == 0) alert("ONLY " + totalUSD + 'USD');
+                else {
+                    var dollars = Math.round(totalUSD);
+                    var cents = totalUSD % 1 * 100;
+                    alert(dollars + " USD, " + cents.toFixed(0) + " cents.");
+                }
+            }
+
+            function exerciseFifteen() {
+                let minutesTotal = parseInt(prompt("Enter minutes: "));
+
+                let hours = Math.floor(minutesTotal / 60);
+                let minutes = minutesTotal % 60;
+
+                alert(hours + " HOURS, " + minutes + "MINUTES")
+            }
+        </script>
+    </body>
+</html>
