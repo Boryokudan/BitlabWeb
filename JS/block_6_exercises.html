@@ -9,12 +9,19 @@
     <body>
         <script text="text/javascript">
 
-            // exerciseOne();
-            // exerciseTwo();
-            // exerciseThree();
-            // exerciseFour();
-            // exerciseFive();
-            exerciseSix();
+            while(true) {
+                chooseEx();
+            }
+
+            function chooseEx() {
+                let exNum = parseInt(prompt("Enter exercise number: "));
+
+                let exList = [exerciseOne, exerciseTwo, exerciseThree, exerciseFour, exerciseFive, exerciseSix];
+
+                if (exNum <= 0 || exNum > exList.length) return alert("Exercise is not found.");
+
+                return exList[exNum - 1]();
+            }
 
             function exerciseOne() {
                 let length = parseInt(prompt("Enter array length: "));
