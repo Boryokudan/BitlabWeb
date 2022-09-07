@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block 7</title>
+    </head>
+
+    <body>
+        <script text="text/javascript">
+
+            while(true) {
+                chooseEx();
+            }
+
+            function chooseEx() {
+                let exNum = parseInt(prompt("Enter exercise number: "));
+
+                let exList = [exerciseOne, exerciseTwo, exerciseThree, exerciseFour, exerciseFive, exerciseSix];
+
+                if (exNum <= 0 || exNum > exList.length) return alert("Exercise is not found.");
+
+                return exList[exNum - 1]();
+            }
+
+            function exerciseOne() {
+                let len = parseInt(prompt("Enter array length: "));
+                let arr = [];
+
+                for (var i = 0; i < len; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    arr[i] = n;
+                }
+
+                let m = parseInt(prompt("Enter targer number: "));
+                let targetIndex = -1;
+                let isFound = false;
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] == m) {
+                        targetIndex = i;
+                        isFound = true;
+                    }
+                }
+
+                if (isFound) alert("FOUND at index: " + targetIndex);
+                else alert("NOT FOUND.");
+            }
+
+            function exerciseTwo() {
+                let arr = [];
+                let i = 0;
+
+                while(true) {
+                    let n = parseInt(prompt("Enter the value: "));
+
+                    if (n != 0) {
+                        arr[i] = n;
+                        i++;
+                    }
+                    else break;
+                }
+
+                let geometricMean = 1;
+
+                for (var j = 0; j < arr.length; j++) {
+                    geometricMean *= arr[j];
+                }
+
+                geometricMean = Math.pow(geometricMean, 1 / arr.length);
+
+                alert("Geometric mean is: " + geometricMean.toFixed(3));
+            }
+
+            function exerciseThree() {
+                let numsPositive = [];
+                let i = 0;
+
+                while(true) {
+                    let n = parseInt(prompt("Enter the value: "));
+
+                    if (n != 0) {
+                        if (n > 0) {
+                            numsPositive[i] = n;
+                            i++
+                        }
+                    }
+                    else break;
+                }
+                alert("Positive nums are: " + numsPositive);
+            }
+
+            function exerciseFour() {
+                let len = parseInt(prompt("Enter array length: "));
+                let arr = [];
+
+                for (var i = 0; i < len; i++) {
+                    var n = parseInt(prompt("Enter element: "));
+                    arr[i] = n;
+                }
+
+                let multOfPositives = 1;
+
+                for (var j = 0; j < arr.length; j++) {
+                    if (arr[j] != 0) multOfPositives *= arr[j];
+                }
+                alert("Multiplied non-zero nums: " + multOfPositives);
+            }
+
+            function exerciseFive() {
+
+                let cars = [
+                    {"make": "Toyota",
+                     "model": "Corolla",
+                     "year": "2019", 
+                     "volume": 1.6,
+                     "price": 25_000},
+
+                     {"make": "BMW",
+                     "model": "535i",
+                     "year": "2017", 
+                     "volume": 3.0,
+                     "price": 40_000},
+
+                     {"make": "Toyota",
+                     "model": "Camry",
+                     "year": "2021", 
+                     "volume": 3.5,
+                     "price": 35_000},
+
+                     {"make": "Audi",
+                     "model": "A8",
+                     "year": "2021", 
+                     "volume": 3.0,
+                     "price": 110_000},
+
+                     {"make": "Mercedes-Benz",
+                     "model": "S560",
+                     "year": "2021", 
+                     "volume": 4.0,
+                     "price": 85_000},
+
+                     {"make": "Toyota",
+                     "model": "LC200",
+                     "year": "2020", 
+                     "volume": "4.6",
+                     "price": 55_000},
+
+                     {"make": "Audi",
+                     "model": "RS6",
+                     "year": "2022", 
+                     "volume": 4.0,
+                     "price": 155_000},
+
+                     {"make": "Hyundai",
+                     "model": "Accent",
+                     "year": "2018", 
+                     "volume": 1.8,
+                     "price": 20_000},
+
+                     {"make": "BMW",
+                     "model": "320xi",
+                     "year": "2007", 
+                     "volume": 2.0,
+                     "price": 15_000},
+
+                     {"make": "Toyota",
+                     "model": "Prius",
+                     "year": "2015", 
+                     "volume": 0.0,
+                     "price": 18_000},
+
+                     {"make": "Kia",
+                     "model": "C'eed",
+                     "year": "2018", 
+                     "volume": 1.6,
+                     "price": 22_000},
+
+                     {"make": "Audi",
+                     "model": "A4",
+                     "year": "2009", 
+                     "volume": 2.0,
+                     "price": 16_000},
+
+                     {"make": "Hyundai",
+                     "model": "Sonata",
+                     "year": "2021", 
+                     "volume": 2.5,
+                     "price": 35_000},
+
+                     {"make": "Kia",
+                     "model": "K5",
+                     "year": "2020", 
+                     "volume": 2.5,
+                     "price": 32_000},
+                ]
+
+                let isRunning = true;
+
+                while (isRunning) {
+                    let input = prompt("INSERT [1] TO SEARCH BY MAKE" + '\n' +
+                                   "INSERT [2] TO SEARCH BY YEAR" + '\n' +
+                                   "INSERT [3] TO SEARCH BY ENGINE VOLUME" + '\n' +
+                                   "INSERT [4] TO SEARCH BY PRICE" + '\n' +
+                                   "INSERT [5] TO EXIT" + '\n');
+                
+                    switch(input) {
+                        case "1":
+                            var inputMake = prompt(
+                                "INSERT MAKE " + '\n' +
+                                "\tMakes currently available:" + '\n' + 
+                                "\t\tAudi, BMW, Mercedes-Benz, Hyundai, Kia, Toyota." 
+                            );
+                            alert(searchByMake(inputMake));
+                            break;
+
+                        case "2":
+                            alert(
+                                "INSERT YEAR " + '\n' +
+                                "\tYears currently available:" + '\n' + 
+                                "\t\tfrom 2007 to 2021."
+                            );
+                            var yearFrom = parseInt(prompt("Enter year to search from: "));
+                            var yearTo = parseInt(prompt("Enter year to search to: "));
+                            alert(searchByYear(yearFrom, yearTo));
+                            break;
+
+                        case "3":
+                            alert(
+                                "INSERT ENGINE VOLUME " + '\n' +
+                                "\tEngine volume currently available:" + '\n' + 
+                                "\t\tfrom 1.6 to 4.6."
+                            );
+                            var volumeFrom = parseFloat(prompt("Enter volume to search from: "));
+                            var volumeTo = parseFloat(prompt("Enter volume to search to: "));
+                            alert(searchByVolume(volumeFrom, volumeTo));
+                            break;
+
+                        case "4":
+                            alert(
+                                "INSERT PRICE in $ " + '\n' +
+                                "\tPrices vary in range:" + '\n' + 
+                                "\t\tfrom 15,000$ to 155,000$."
+                            );
+                            var priceFrom = parseInt(prompt("Enter price to search from: "));
+                            var priceTo = parseInt(prompt("Enter price to search to: "));
+                            alert(searchByPrice(priceFrom, priceTo));
+                            break;
+
+                        case "5":
+                            isRunning = false;
+                            break;
+                    }
+                }
+
+                function searchByMake(inputMake) {
+                    var output = "";
+                    for (var i = 0; i < cars.length; i++) {
+                        if (cars[i]["make"].localeCompare(inputMake) == 0) {
+                            output += cars[i]["make"] + ', ' + cars[i]["model"] + ', ' + cars[i]["year"] + ', ' + cars[i]["volume"] + ', ' + '$' + cars[i]["price"] + '\n';
+                        }
+                    }
+                    return output;
+                }
+
+                function searchByYear(yearFrom, yearTo) {
+                    var output = "";
+                    for (var i = 0; i < cars.length; i++) {
+                        if (cars[i]["year"] >= yearFrom && cars[i]["year"] <= yearTo) {
+                            output += cars[i]["make"] + ', ' + cars[i]["model"] + ', ' + cars[i]["year"] + ', ' + cars[i]["volume"] + ', ' + '$' + cars[i]["price"] + '\n';
+                        }
+                    }
+                    return output;
+                }
+
+                function searchByVolume(volumeFrom, volumeTo) {
+                    var output = "";
+                    for (var i = 0; i < cars.length; i++) {
+                        if (cars[i]["volume"] >= volumeFrom && cars[i]["volume"] <= volumeTo) {
+                            output += cars[i]["make"] + ', ' + cars[i]["model"] + ', ' + cars[i]["year"] + ', ' + cars[i]["volume"] + ', ' + '$' + cars[i]["price"] + '\n';
+                        }
+                    }
+                    return output;
+                }
+
+                function searchByPrice(priceFrom, priceTo) {
+                    var output = "";
+                    for (var i = 0; i < cars.length; i++) {
+                        if (cars[i]["price"] >= priceFrom && cars[i]["price"] <= priceTo) {
+                            output += cars[i]["make"] + ', ' + cars[i]["model"] + ', ' + cars[i]["year"] + ', ' + cars[i]["volume"] + ', ' + '$' + cars[i]["price"] + '\n';
+                        }
+                    }
+                    return output;
+                }
+            }
+
+            function exerciseSix() {
+                let students = [];
+
+                let isRunning = true;
+
+                while(isRunning) {
+                    let input = prompt("PRESS [1] TO ADD A STUDENT" + '\n' +
+                                       "PRESS [2] TO LIST STUDENTS" + '\n' +
+                                       "PRESS [0] TO EXIT"
+                                      );
+
+                    switch(input) {
+                        case "1":
+                            addStudent(students);
+                            break;
+
+                        case "2":
+                            alert(listStudents(students));
+                            break;
+
+                        case "0":
+                            isRunning = false;
+                            break;
+                    }
+                }
+
+                function addStudent(students) {
+                    let firstName = prompt("Insert first name: ");
+                    let lastName = prompt("Insert last name: ");
+                    let gpa = parseFloat(prompt("Insert GPA: "));
+
+                    let student = {"firstName": firstName,
+                                   "lastName": lastName,
+                                   "GPA": gpa};
+
+                    students.push(student);
+                }
+
+                function listStudents(students) {
+                    var studentsList = "";
+                    for (var i = 0; i < students.length; i++) {
+                        studentsList += (i + 1) + ") " + students[i]["firstName"] + ', ' + students[i]["lastName"] + ", " + students[i]["GPA"] + '\n';
+                    }
+                    return studentsList;
+                }
+            }
+
+        </script>
+    </body>
+</html>
