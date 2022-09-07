@@ -99,12 +99,12 @@
                     arr[i] = n;
                 }
 
-                let multOfPositives = 1;
+                let multPositives = 1;
 
                 for (var j = 0; j < arr.length; j++) {
-                    if (arr[j] != 0) multOfPositives *= arr[j];
+                    if (arr[j] != 0) multPositives *= arr[j];
                 }
-                alert("Multiplied non-zero nums: " + multOfPositives);
+                alert("Multiplied non-zero nums: " + multPositives);
             }
 
             function exerciseFive() {
@@ -209,7 +209,7 @@
                             var inputMake = prompt(
                                 "INSERT MAKE " + '\n' +
                                 "\tMakes currently available:" + '\n' + 
-                                "\t\tAudi, BMW, Mercedes-Benz, Hyundai, Kia, Toyota." 
+                                "\tAudi, BMW, Mercedes-Benz, Hyundai, Kia, Toyota." 
                             );
                             alert(searchByMake(inputMake));
                             break;
@@ -218,7 +218,7 @@
                             alert(
                                 "INSERT YEAR " + '\n' +
                                 "\tYears currently available:" + '\n' + 
-                                "\t\tfrom 2007 to 2021."
+                                "\tfrom 2007 to 2021."
                             );
                             var yearFrom = parseInt(prompt("Enter year to search from: "));
                             var yearTo = parseInt(prompt("Enter year to search to: "));
@@ -229,7 +229,7 @@
                             alert(
                                 "INSERT ENGINE VOLUME " + '\n' +
                                 "\tEngine volume currently available:" + '\n' + 
-                                "\t\tfrom 1.6 to 4.6."
+                                "\tfrom 1.6 to 4.6."
                             );
                             var volumeFrom = parseFloat(prompt("Enter volume to search from: "));
                             var volumeTo = parseFloat(prompt("Enter volume to search to: "));
@@ -240,7 +240,7 @@
                             alert(
                                 "INSERT PRICE in $ " + '\n' +
                                 "\tPrices vary in range:" + '\n' + 
-                                "\t\tfrom 15,000$ to 155,000$."
+                                "\tfrom 15,000$ to 155,000$."
                             );
                             var priceFrom = parseInt(prompt("Enter price to search from: "));
                             var priceTo = parseInt(prompt("Enter price to search to: "));
@@ -340,7 +340,6 @@
                     return studentsList;
                 }
             }
-
         </script>
     </body>
 </html>
