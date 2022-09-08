@@ -1,3 +1,8 @@
+const mainContainer = document.getElementById("mainContainer");
+let authorizationBlock = document.getElementById("itemContainer");
+let button = document.getElementById("signInButton");
+button.addEventListener("click", checkUser);
+
 let users = [
     {"login": "ilyas", "password": "qwerty"},
     {"login": "eldar", "password": "qqqqq"},
@@ -7,34 +12,37 @@ let users = [
 ];
 
 function checkUser() {
-    let itemContainer1 = document.getElementById("itemContainer");
-    let success1 = document.getElementById("success");
-    let login1 = document.getElementById("login");
-    let password1 = document.getElementById("password");
     let isValid = false;
+    let login;
+    let password;
 
     while(!isValid) {
-        if (login1.innerText.localeCompare("") == 0 && password1.innerText.localeCompare("") == 0) {
-            alert("Login and password field cannot be empty!");
-            login1.style.border = "1px solid red";
-            password1.style.border = "1px solid red";
+        login = document.getElementById("logInput");
+        password = document.getElementById("passInput");
+        
+        if (login.value.localeCompare("") == 0 && password.value.localeCompare("") == 0) {
+            login.style.border = "1px solid red";
+            password.style.border = "1px solid red";
+            break;
         }
-        else if (login1.localeCompare("") == 0) {
-            alert("Login field cannot be empty!");
-            login1.style.border = "1px solid red";
+        else if (login.value.localeCompare("") == 0) {
+            login.style.border = "1px solid red";
+            break;
         }
-        else if (password1.localeCompare("") == 0) {
-            alert("Password field cannot be empty!");
-            password1.style.border = "1px solid red";
+        else if (password.value.localeCompare("") == 0) {
+            password.style.border = "1px solid red";
+            break;
         }
         else isValid = true;
     }
 
-    for (var i = 0; i < users.length; i++) {
-        if (users[i]["login"].localeCompare(login1.innerText) == 0 && users[i]["password"].localeCompare(password1.innerText) == 0) {
-            itemContainer1.style.display = "none";
-            success1.style.display = "flex";
+    for (let i = 0; i < users.length; i++) {
+        if (users[i]["login"].localeCompare(login.value) == 0 && users[i]["password"].localeCompare(password.value) == 0) {
+            authorizationBlock.remove();
+            let successfulAuthorization = document.createElement("div");
+            successfulAuthorization.id = "success";
+            successfulAuthorization.innerHTML = "Successfully signed in!";
+            mainContainer.append(successfulAuthorization);
         }
     }
-    
 }

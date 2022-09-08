@@ -9,10 +9,8 @@
     </head>
 
     <body>
-        <script src="script.js" text="text/javascript"></script>
-
         <div id="mainContainer">
-            <div id="itemContainer">
+            <form id="itemContainer">
                 <div class="item" id="login">
                     <p>LOGIN:</p>
                     <input type="text" name="" id="logInput">
@@ -23,10 +21,10 @@
                     <input type="password" name="" id="passInput">
                 </div>
 
-                <button id="signIn" onclick="checkUser()">Sign In</button>
-
-                <div id="success">Successfully signed in!</div>
-            </div>
+                <button id="signInButton">Sign In</button>
+            </form>
+            <!-- <div id="success">Successfully signed in!</div> -->
         </div>
+        <script src="script.js" text="text/javascript"></script>
     </body>
 </html>
