@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" defer></script>    
+        <title>DOM-3</title>
+    </head>
+    
+    <body>
+        <div id="main-container">
+            <div class="card-data" id="card-number">
+                <label for="num-box">CARD NUMBER:</label>
+                <input class="num-box" type="text" maxlength="4">
+                <input class="num-box" type="text" maxlength="4">
+                <input class="num-box" type="text" maxlength="4">
+                <input class="num-box" type="text" maxlength="4">
+            </div>
+
+            <div class="card-data" id="card-name">
+                <label for="name-box">CARDHOLDER'S NAME:</label>
+                <input id="name-box" type="text">
+            </div>
+
+            <div class="card-data" id="card-cvv">
+                <label for="cvv-box">CVV:</label>
+                <input id="cvv-box" type="text" maxlength="3">
+            </div>
+
+            <button id="confirm-button">Confirm</button>
+        </div>
+    </body>
+</html>

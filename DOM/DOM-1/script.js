@@ -41,7 +41,7 @@ function checkUser() {
             authorizationBlock.remove();
             let successfulAuthorization = document.createElement("div");
             successfulAuthorization.id = "success";
-            successfulAuthorization.innerHTML = "Successfully signed in!";
+            successfulAuthorization.innerText = "Successfully signed in!";
             mainContainer.append(successfulAuthorization);
         }
     }
