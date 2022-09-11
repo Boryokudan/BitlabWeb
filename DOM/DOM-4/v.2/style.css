@@ -17,5 +17,5 @@ body {
 }
 
 #gallery img {
-    -webkit-box-reflect: below 40px linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    -webkit-box-reflect: below 40px linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
 }
