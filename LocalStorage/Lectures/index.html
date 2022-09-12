@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>LS-01</title>
+    </head>
+
+    <body>
+        
+
+        <script>
+            localStorage.setItem('John', 18);
+            localStorage.setItem('Eric', 35);
+            let x = localStorage.getItem("John");
+
+            console.log(x);
+            console.log(localStorage.John);
+            
+            localStorage.John = 24;
+            let y = localStorage.getItem("John");
+            console.log(y);
+
+            localStorage.removeItem("John");
+            console.log(localStorage.getItem("John"));
+            localStorage.clear();
+            
+        </script>
+    </body>
+</html>
