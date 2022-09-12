@@ -26,8 +26,14 @@ button.addEventListener("click", e => {
     let passwordValid = password.length >= 6;
     let passwordsMatch = password.localeCompare(repeatedPassword) == 0;
 
-    if (email === "" || password === "") {
+    if (email === "" && password === "") {
         errors[0].innerText = "Email field cannot be blank.";
+        errors[1].innerText = "Password cannot be blank or less than six characters.";
+    }
+    else if (email === "") {
+        errors[0].innerText = "Email field cannot be blank.";
+    }
+    else if (password === "") {
         errors[1].innerText = "Password cannot be blank or less than six characters.";
     }
     else {
