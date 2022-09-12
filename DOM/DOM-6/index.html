@@ -3,20 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>DOM-6</title>
-        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-
         <div class="container">
-            <label for="email">Email:</label>
+            <label for="email" class="input-label"><b>Email</b></label>
             <input id="email" class="input" type="text">
+            <p id="email-error" class="error-p"></p>
 
-            <label for="password">Password:</label>
-            <input  id="password" class="input password" type="password">
+            <label for="password" class="input-label"><b>Password:</b></label>
+            <input id="password" class="input password" type="password">
+            <p id="password-error" class="error-p"></p>
 
-            <label for="repeated-password">Repeat password:</label>
+            <label for="repeated-password" class="input-label"><b>Repeat password:</b></label>
             <input id="repeated-password" class="input password" type="password">
+            <p id="password-repeat-error" class="error-p"></p>
+
+            <button id="register-button">Register</button>
         </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
