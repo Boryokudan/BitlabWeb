@@ -1,8 +1,3 @@
-const mainContainer = document.getElementById("mainContainer");
-let authorizationBlock = document.getElementById("itemContainer");
-let button = document.getElementById("signInButton");
-button.addEventListener("click", checkUser);
-
 let users = [
     {"login": "ilyas", "password": "qwerty"},
     {"login": "eldar", "password": "qqqqq"},
@@ -11,7 +6,10 @@ let users = [
     {"login": "alibek", "password": "aaaaaa"}
 ];
 
-function checkUser() {
+const mainContainer = document.getElementById("mainContainer");
+let authorizationBlock = document.getElementById("itemContainer");
+let button = document.getElementById("signInButton");
+button.addEventListener("click", e => {
     let isValid = false;
     let login;
     let password;
@@ -45,4 +43,4 @@ function checkUser() {
             mainContainer.append(successfulAuthorization);
         }
     }
-}
+});
