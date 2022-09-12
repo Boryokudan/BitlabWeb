@@ -10,37 +10,26 @@ const mainContainer = document.getElementById("mainContainer");
 let authorizationBlock = document.getElementById("itemContainer");
 let button = document.getElementById("signInButton");
 button.addEventListener("click", e => {
-    let isValid = false;
-    let login;
-    let password;
+    let login = document.getElementById("logInput");
+    let password = document.getElementById("passInput");
 
-    while(!isValid) {
-        login = document.getElementById("logInput");
-        password = document.getElementById("passInput");
-        
-        if (login.value.localeCompare("") == 0 && password.value.localeCompare("") == 0) {
-            login.style.border = "1px solid red";
-            password.style.border = "1px solid red";
-            break;
-        }
-        else if (login.value.localeCompare("") == 0) {
-            login.style.border = "1px solid red";
-            break;
-        }
-        else if (password.value.localeCompare("") == 0) {
-            password.style.border = "1px solid red";
-            break;
-        }
-        else isValid = true;
-    }
+    let isValid = false;
 
     for (let i = 0; i < users.length; i++) {
         if (users[i]["login"].localeCompare(login.value) == 0 && users[i]["password"].localeCompare(password.value) == 0) {
-            authorizationBlock.remove();
-            let successfulAuthorization = document.createElement("div");
-            successfulAuthorization.id = "success";
-            successfulAuthorization.innerText = "Successfully signed in!";
-            mainContainer.append(successfulAuthorization);
+            isValid = true;
         }
+    }
+
+    if (isValid) {
+        authorizationBlock.remove();
+        let successfulAuthorization = document.createElement("div");
+        successfulAuthorization.id = "success";
+        successfulAuthorization.innerText = "Successfully signed in!";
+        mainContainer.append(successfulAuthorization);
+    }
+    else {
+        login.style.border = "1px solid red";
+        password.style.border = "1px solid red";
     }
 });
