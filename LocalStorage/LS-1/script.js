@@ -1,19 +1,19 @@
-let users = [];
+if (localStorage.getItem("user") != undefined) {
+    let parsedUser = JSON.parse(localStorage.getItem("user"));
+    document.getElementById("name").value = parsedUser.name;
+    document.getElementById("surname").value = parsedUser.surname;
+    document.getElementById("phone").value = parsedUser.phone;
+    document.getElementById("country").value = parsedUser.country;
+}
 
-let body = document.body;
-let saveToDraft = body.querySelector("#save-to-draft");
-
-saveToDraft.addEventListener("click", e => {
+let saveToDraft = document.body.querySelector("#save-to-draft").addEventListener("click", e => {
     let name = document.getElementById("name").value;
     let surname = document.getElementById("surname").value;
     let phone = document.getElementById("phone").value;
+    let country = document.getElementById("country").value;
 
-    let select = document.getElementById("country");
-    let country = select.options[select.selectedIndex].text;
-    
     let user = {name: name, surname: surname, country: country, phone: phone};
-    users.push(user);
 
-    let jsonedUser = JSON.stringify(user);
-    localStorage.setItem("user", jsonedUser);
-});
+    let userJSON = JSON.stringify(user);
+    localStorage.setItem("user", userJSON);
+});;
