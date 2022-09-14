@@ -17,7 +17,6 @@ if (page != null) {
     }
 }
 else {
-
     let parsedCart = JSON.parse(localStorage.getItem("cart"));
     let table = document.getElementById("tableBody");
 
@@ -44,6 +43,16 @@ else {
         let tdPrice = document.createElement("td");
         tdPrice.innerText = price;
         tr.append(tdPrice);
+
+        let removeButton = document.createElement("button");
+        removeButton.addEventListener("click", e => {
+            tr.remove();
+            parsedCart.splice(i, 1);
+            localStorage.setItem("cart", JSON.stringify(parsedCart));
+        });
+        removeButton.className = "btn btn btn-sm bg-info";
+        removeButton.innerText = "Remove";
+        tr.append(removeButton);
 
         table.append(tr);
     }
