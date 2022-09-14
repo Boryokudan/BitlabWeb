@@ -17,5 +17,34 @@ if (page != null) {
     }
 }
 else {
-    
+
+    let parsedCart = JSON.parse(localStorage.getItem("cart"));
+    let table = document.getElementById("tableBody");
+
+    for (let i = 0; i < parsedCart.length; i++) {
+        let name = parsedCart[i].name;
+        let price = parsedCart[i].price;
+        let text = parsedCart[i].text;
+
+        let tr = document.createElement("tr");
+
+        let th = document.createElement("th");
+        th.scope = "row";
+        th.innerText = i + 1;
+        tr.appendChild(th);
+
+        let tdName = document.createElement("td");
+        tdName.innerText = name;
+        tr.appendChild(tdName);
+
+        let tdText = document.createElement("td");
+        tdText.innerText = text;
+        tr.appendChild(tdText);
+
+        let tdPrice = document.createElement("td");
+        tdPrice.innerText = price;
+        tr.append(tdPrice);
+
+        table.append(tr);
+    }
 }
